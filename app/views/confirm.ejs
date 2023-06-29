@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- boostrap -->
+    <%- include('./partials/boostrap') %>
+    <!-- olw Carousel -->
+    <%- include('./partials/owl.ejs') %>
+    <!-- css style -->
+    <link rel="stylesheet" href="/assets/css/confirm.css">
+    <link rel="shortcut icon" href="/assets/img/ole.png" type="image/x-icon">
+    
+            <title>Confirmacion del prestamo</title>
+</head>
+<header>
+    <%- include('./partials/navbar.ejs') %>
+</header>
+
+<body>
+
+    <main class="row no-gutters">
+        <article class="col-3 col-md-2">
+            <section class="cuadrado">
+                <img src="/assets/img/ORGULLO-NEGRET.jpg" class="las" alt="">
+            </section>
+
+            <section class="ribbon1">
+                <section class="texto">
+                    <p class="nombre"></p> NOMBRE: <br>
+                    <p class="nombre"> Orgullo y Prejuicio</p> AUTOR: <br>
+                    <p class="nombre"> Jane Austen</p> <br>
+                </section>
+            </section>
+        </article>
+
+        <article class="container1">
+            <section class="top">
+                <figure class="img1">
+                    <img src="/assets/img/usuario.png" class="img">
+                </figure>
+                <div class="texto1">
+                    ¿Desea confirmar el prestamo del libro Orgullo y prejuicio de Jane Austen?
+                </div>
+                <button type="button" class="btn-block" id="boton"><a href="/libro/auth">Confirmar</a> </button>
+                <button type="button" class="btn-block" id="boton"><a href="/libro/pagina">Cancelar</a></button>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <%- include('./partials/footer.ejs') %>
+    </footer>
+
+</body>
+
+</html>

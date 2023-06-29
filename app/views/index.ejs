@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dracula">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- boostrap -->
+  <%- include('./partials/boostrap') %>
+  <!-- olw Carousel -->
+  <%- include('./partials/owl.ejs') %>
+  <!-- css style -->
+  <link rel="stylesheet" href="/assets/css/pagina-style.css">
+  <link rel="stylesheet" href="/assets/css/pagina-index.css">
+
+      <title>Index</title>
+</head>
+
+<body>
+  <%- include('./partials/navbar.ejs') %>
+
+    <main>
+      <article class="resenas">
+        <h1 class="ribbon2">
+          <strong class="ribbon-content">Favoritos del mes</strong>
+        </h1>
+      </article>
+
+      <!-- forEach con componente de libros -->
+      <article class="owl-carousel">
+        <% libros.forEach(LIBRO => { %>
+          <figure class="item text-center" id="libro">
+
+            <% if (LIBRO.IMAGEN && LIBRO.IMAGEN.mimetype) { %>
+              <a href="/libro/pagina?COD_LIBRO=<%= LIBRO.COD_LIBRO %>">
+                <% if (LIBRO.IMAGEN.mimetype.mime === 'image/jpeg') { %>
+                  <img src="data:image/jpeg;base64,<%= LIBRO.IMAGEN.base64 %>" class="img-thumbnail" alt="<%= LIBRO.TITULO %>">
+                <% } else { %>
+                  <img src="data:image/png;base64,<%= LIBRO.IMAGEN.base64 %>" class="img-thumbnail" alt="<%= LIBRO.TITULO %>">
+                <% } %>
+              </a>
+            <% } else { %>
+              <a href="/libro/pagina?COD_LIBRO=<%= LIBRO.COD_LIBRO %>"><img src="/assets/img/literatura_clasica/Alicia-en-el-pais-de-las-maravillas.jpg"
+                class="img-thumbnail" alt="<%= LIBRO.TITULO %>"></a>             
+            <% } %>
+            
+            <figcaption class="figure-caption">
+              <%= LIBRO.TITULO %>
+            </figcaption>
+          </figure>
+          <% }) %>
+      </article>
+
+      <article class="resenas">
+        <h1 class="ribbon2">
+          <strong class="ribbon-content">Libros destacados</strong>
+        </h1>
+      </article>
+
+      <article class="owl-carousel">
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/Alicia-en-el-pais-de-las-maravillas.jpg"
+              class="img-thumbnail" alt="book-name"></a>
+          <figcaption class="figure-caption">Alicia en el pais de laas maravillas</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/de_aquiles_a_zidane.jpg" class="img-thumbnail"
+              alt="book-name"></a>
+          <figcaption class="figure-caption">De aquiles a zidane</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/100añosdesoledad.jpg" class="img-thumbnail" alt="book-name"></a>
+          <figcaption class="figure-caption">100 Años de Soledad</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/don-quijote-de-la-mancha.jpg" class="img-thumbnail"
+              alt="book-name"></a>
+          <figcaption class="figure-caption">Don quijote de la mancha</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/dracula.webp" class="img-thumbnail" alt="book-name"></a>
+          <figcaption class="figure-caption">Dracula</figcaption>
+        </figure>
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/erase-una-y-otra-vez.jpg" class="img-thumbnail"
+              alt="book-name"></a>
+          <figcaption class="figure-caption">Erase una (y otra) vez</figcaption>
+        </figure>
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/el-arte-de-la-guerra.jpg" class="img-thumbnail"
+              alt="book-name"></a>
+          <figcaption class="figure-caption">El arte de la guerra</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/Al-faro.jpg" class="img-thumbnail" alt="book-name"></a>
+          <figcaption class="figure-caption">Al faro</figcaption>
+        </figure>
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/erase-una-y-otra-vez.jpg" class="img-thumbnail"
+              alt="book-name"></a>
+          <figcaption class="figure-caption">Erase una (y otra) vez</figcaption>
+        </figure>
+      </article>
+      <article class="owl-carousel">
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/El-jugador.webp" class="img-thumbnail"
+              alt="book-name"></a>
+          <figcaption class="figure-caption">El jugador</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/don-quijote-de-la-mancha.jpg" class="img-thumbnail"
+              alt="book-name"></a>
+          <figcaption class="figure-caption">Don quijote de la mancha</figcaption>
+        </figure>
+  
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/el-principito.jpg" class="img-thumbnail"
+              alt="book-name"></a>
+          <figcaption class="figure-caption">El principito</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/erase-una-y-otra-vez.jpg" class="img-thumbnail"
+              alt="book-name"></a>
+          <figcaption class="figure-caption">Erase una (y otra) vez</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/frankenstein-o-el-moderno-prometeo.webp"
+              class="img-thumbnail" alt="book-name"></a>
+          <figcaption class="figure-caption">Frankenstein o el moderno prometeo</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/hamlet.jpg" class="img-thumbnail" alt="book-name"></a>
+          <figcaption class="figure-caption">Hamlet</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/la-divina-comedia.jpg" class="img-thumbnail"
+              alt="book-name"></a>
+          <figcaption class="figure-caption">La divina comedia</figcaption>
+        </figure>
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/don-quijote-de-la-mancha.jpg" class="img-thumbnail"
+              alt="book-name"></a>
+          <figcaption class="figure-caption">Don quijote de la mancha</figcaption>
+        </figure>
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/don-quijote-de-la-mancha.jpg" class="img-thumbnail"
+              alt="book-name"></a>
+          <figcaption class="figure-caption">Don quijote de la mancha</figcaption>
+        </figure>
+  
+
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/la-odisea.jpg" class="img-thumbnail" alt="book-name"></a>
+          <figcaption class="figure-caption">La odisea</figcaption>
+        </figure>
+      </article>
+
+
+      <article class="owl-carousel">
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/lo-que-el-viento-se-llevo.jpeg" class="img-thumbnail"
+              alt="book-name"></a>
+          <figcaption class="figure-caption">Lo que el viento se llevó</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/mujercitas.jpg" class="img-thumbnail"
+              alt="book-name"></a>
+          <figcaption class="figure-caption">Mujercitas</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/orgullo-y-prejuicio.jpg" class="img-thumbnail"
+              alt="book-name"></a>
+          <figcaption class="figure-caption">Orgullo y prejuicio</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/don-quijote-de-la-mancha.jpg" class="img-thumbnail"
+              alt="book-name"></a>
+          <figcaption class="figure-caption">Don quijote de la mancha</figcaption>
+        </figure>
+  
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/por-si-no-te-vuelvo-a-ver.jpg" class="img-thumbnail"
+              alt="book-name"></a>
+          <figcaption class="figure-caption">Por si no te vuelvo a ver</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/viaje-al-centro-de-la-tierra.jpg" class="img-thumbnail"
+              alt="book-name"></a>
+          <figcaption class="figure-caption">Viaje al centro de la tierra</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/dracula.webp" class="img-thumbnail" alt="book-name"></a>
+          <figcaption class="figure-caption">Dracula</figcaption>
+        </figure>
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/erase-una-y-otra-vez.jpg" class="img-thumbnail"
+              alt="book-name"></a>
+          <figcaption class="figure-caption">Erase una (y otra) vez</figcaption>
+        </figure>
+        <figure class="item text-center">
+          <a href="/libro/pagina"><img src="/assets/img/literatura_clasica/erase-una-y-otra-vez.jpg" class="img-thumbnail"
+              alt="book-name"></a>
+          <figcaption class="figure-caption">Erase una (y otra) vez</figcaption>
+        </figure>
+      </article>
+    </main>
+    <!-- Script para el carrousel -->
+    <script src="/assets/js/owl-function.js"></script>
+
+    <footer>
+      <%- include('./partials/footer.ejs') %>
+    </footer>
+
+</body>
+
+</html>

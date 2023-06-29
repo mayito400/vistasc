@@ -1,0 +1,145 @@
+body{
+     overflow-x:hidden;
+     background:#3D525C ;
+}
+.ribbon1 {
+    width: 0px;
+    height: 70vh;
+    border-left: 90px solid #79b4b7;
+    border-right: 90px solid #79b4b7;
+    border-bottom: 35px solid transparent;
+    border-radius: 5px;
+    margin-left: 5vh;
+    margin-top: 5vh;
+    margin-bottom:5vh ;
+    display: flex;
+    justify-content: center;
+   align-items: center;
+   padding: 0;
+
+}   
+.texto
+{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    text-decoration: solid white;
+}
+.nombre{
+    font-size: 25px;
+    flex: content;
+}
+.las{
+    width: 100px;
+    height: 140px;
+    
+    
+}
+.cuadrado{
+    width: 24vh; 
+     height: 150px; 
+     border: 3px solid #79b4b7;
+     background: #79b4b7;
+     border-radius: 5px;
+     margin-left: 5vh;
+     margin-top: 5vh;
+     margin-bottom:5vh ;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+
+   .container1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 70%;
+    max-width: 1000px;
+    background: #3a4950;
+    margin: 50px;
+    padding: auto;
+    border-color: black;
+}
+.top{
+    position: relative;
+    padding: 60px;
+    padding-bottom: 0;
+    align-items: center;
+    border-color: black;
+}
+
+.img1{
+    position: relative;
+    width: 50%;
+    display: flex;
+    align-items: center;
+  
+}
+/*.i1{
+    position:relative;
+    width: 75%;
+    min-width: 100px;
+    border-radius: 20%;
+    align-items: center;
+    aspect-ratio: 1;
+ 
+}*/
+.img{
+    height: 130px;
+    position: relative;
+    top: 0;
+    left: 80%;
+    width: 50%;
+    height: 50%;
+    object-fit:cover;
+}
+.texto1{
+    display: flex;
+    height: 10vh;
+    justify-content: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 35px;
+    color: antiquewhite;
+
+}
+.input-group mb-3{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    
+    
+}
+.form-control-lg{
+
+    size: 30px;
+    border-color: #79B4B7;
+    height: 130px;
+    position: relative;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    object-fit:cover;
+    padding-top: 20px;
+}
+#boton{
+    background-color: #79B4B7;
+    border-radius: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: black;
+    position: relative;
+    font-size: 28px;
+    margin-top: 25px;
+}
+   
+.login {
+    font-size: 25px;
+    color: #000000;
+    text-decoration: none;
+    font-family: "Josefin Sans", sans-serif;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: #66a7aa;
+}
+ 

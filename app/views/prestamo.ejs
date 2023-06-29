@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dracula">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- boostrap -->
+  <%- include('./partials/boostrap') %>
+    <!-- olw Carousel -->
+    <%- include('./partials/owl.ejs') %>
+      <!-- css style -->
+      <link rel="stylesheet" href="/assets/css/pagina-style.css">
+      <link rel="stylesheet" href="/assets/css/pagina-index.css">
+
+      <title>Prestamo</title>
+</head>
+<header>
+  <%- include('./partials/navbar.ejs') %>
+</header>
+
+<body>
+  <main class="row no-gutters">
+
+    <article class="col-3 col-md-2">
+      <section class="cuadrado">
+        <img src="/assets/IMG/ORGULLO-NEGRET.jpg" class="las" alt="">
+      </section>
+
+      <section class="ribbon1">
+        <section class="texto">
+          <p class="nombre"></p> NOMBRE: <br>
+          <p class="nombre"> Orgullo y Prejuicio</p> AUTOR: <br>
+          <p class="nombre"> Jane Austen</p> <br>
+        </section>
+      </section>
+    </article>
+
+    <article class="col-sm-6 col-md-8 pt-7" id="medio">
+      <section class="resena">
+        <form action="sd" method="post">
+          <label for="" class="texto1"> Lugar del prestamo
+            <input type="text " placeholder="Type here" class="input input-bordered input-lg w-full max-w-xs"
+              required />
+          </label>
+          <label for="" class="texto1"> Genero
+            <input type="text " placeholder="Type here" class="input input-bordered input-lg w-full max-w-xs"
+              required />
+          </label>
+        </form>
+
+        
+          <label for="" class="texto1 pt-7"> Acepto Terminos Y condiciones
+            <input type="checkbox" class="checkbox checkbox-accent" />
+          </label>
+          <button class="btn btn-block btn-info"><a href="/">ENVIAR</a> </button>
+
+        </form>
+
+      </section>
+      <!-- ribbons and other content in here -->
+
+
+
+
+  </main>
+
+  <!-- Script para el carrousel -->
+  <script src="/assets/js/owl-function.js"></script>
+
+  <footer>
+    <%- include('./partials/footer.ejs') %>
+  </footer>
+
+</body>
+
+</html>

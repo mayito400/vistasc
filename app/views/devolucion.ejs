@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dracula">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/agrgarlibros.css">
+  <link rel="shortcut icon" href="/assets/img/ole.png" type="image/x-icon">
+
+
+
+  <!-- boostrap -->
+  <%- include('./partials/boostrap') %>
+    <title>Devolucion</title>
+</head>
+<header>
+  <%- include('./partials/navbar.ejs') %>
+</header>
+
+<body>
+  <div class="row no-gutters">
+    <div class="col-3 col-md-2">
+      <div class="cuadrado">
+        <img src="/assets/IMG/ORGULLO-NEGRET.jpg" class="imagen">
+      </div>
+    </div>
+    <div class="col flex space-x-4 " id="col">
+      <article class="col-sm-6 col-md-8" id="medio">
+        <section class="resena">
+          <form action="sd" method="post">
+            <label for="" class="texto1">
+              <p class=" text-white ">Nombre del libro</p>
+              <input type="text " placeholder="Type here"
+                class="input input-bordered input-lg w-full max-w-xs text-white" required />
+            </label>
+            <label for="" class="texto1 pl-5 pt-5">
+              <p class=" text-white ">Genero</p>
+              <input type="text " placeholder="Type here"
+                class="input input-bordered input-lg w-full max-w-xs text-white" required />
+            </label>
+          </form>
+          <form action="sd" method="post">
+            <label for="" class="texto1">
+              <p class=" text-white ">Numero de Telefono</p>
+              <input type="tel" placeholder="Type here"
+                class="input input-bordered input-lg w-full max-w-xs text-white" required />
+            </label>
+            <label for="" class="texto1 pl-5">
+              <p class=" text-white ">Año de publicacion</p>
+              <input type="date" placeholder="Type here"
+                class="input input-bordered input-lg w-full max-w-xs text-white" required />
+            </label>
+          </form>
+          <form action="ad" method="post">
+            <label for="" class="texto1">
+              <p class=" text-white ">Autor</p>
+              <input type="text" placeholder="Type here"
+                class="input input-bordered input-lg w-full max-w-xs text-white" required />
+            </label>
+            <label for="" class="texto1 pl-5">
+              <p class=" text-white ">Fecha de prestamo</p>
+              <input type="date" placeholder="Type here"
+                class="input input-bordered input-lg w-full max-w-xs text-white" required />
+            </label>
+            <label for="" class="texto1">
+              <p class=" text-white ">Fecha de Devolucion</p>
+              <input type="date" placeholder="Type here"
+                class="input input-bordered input-lg w-full max-w-xs text-white" required />
+            </label>
+            <label for="" class="texto1">
+              <p class=" text-white ">Esta Retrasado</p>
+              <input type="text" placeholder="Type here"
+                class="input input-bordered input-lg w-full max-w-xs text-white" required />
+            </label>
+              <button class="btn btn-block btn-info mt-6"><a href="/">Guardar</a> </button>
+              <button class="btn btn-block btn-info"><a href="/">Cancelar</a> </button>
+
+          </form>
+
+        </section>
+      </article>
+    </div>
+  </div>
+
+  <footer>
+    <%- include('./partials/footer.ejs') %>
+  </footer>
+</body>
+
+</html>

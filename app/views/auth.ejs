@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es"  data-theme="dracula">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--* CSS y Google Fonts -->
+    <link rel="stylesheet" href="/assets/css/auth-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+    <!--* Boostrap  -->
+    <%- include('./partials/boostrap.ejs') %>
+        <title>confirmación</title>
+</head>
+
+<body>
+    <main class="container">
+        <article class="top">
+            <header class="img1">
+                <img src="/assets/img/auth-user.png">
+            </header>
+            <form action="d" method="post">
+            <section class="texto1">
+                Autenticacion para la confirmación del prestamo
+            </section>
+            <section class="input-group mb-3" >
+                <input type="email" class="form-control-lg" placeholder="Correo Electronico" 
+                    aria-label="Recipient's username" aria-describedby="button-addon2" required>
+            </section>
+            <section class="input-group mb-3">
+                <input type="password" class="form-control-lg" placeholder="Contraseña"
+                    aria-label="Recipient's username" aria-describedby="button-addon2" required>
+            </section>
+            <button type="button" class="btn" id="boton"><a href="/libro/prestamo">Confirmar</a> </button>
+        </form>
+        </article>
+    </main>
+</body>
+
+</html>

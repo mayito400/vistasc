@@ -1,0 +1,64 @@
+.imagen{
+    height: 85vh;
+    width: 50vh;
+    margin: 5px;
+    border-radius: 5px;
+}
+body{
+    overflow-x:hidden;
+}
+.form1{
+    padding-top: 5vh;
+    margin-left: 20vh;
+}
+.texto{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+
+}
+#texto{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+
+}
+.form-group1{
+    padding-top: 5vh;
+    margin-left: 13vh;
+}
+#inlineRadio2{
+    font-size: 30px;
+}
+#bolitas{
+    margin-left: 5vh;
+
+}
+#enviar{
+    margin-top: 5vh;
+    margin-left: 13vh; 
+    background-color: #79b4b7;
+    border-radius: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+}
+#inputGroupSelect03{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+
+}
+.texto1{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+    margin-left: 10vh;
+
+}
+.Cantidad{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+    margin-left: 12vh;
+    border-radius: 10px;
+    background-color: #79b4b7;
+
+}
+#col{
+    padding-top: 7vh;
+} 

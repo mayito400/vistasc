@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dracula">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- boostrap -->
+  <%- include('./partials/boostrap') %>
+    <!-- olw Carousel -->
+    <%- include('./partials/owl.ejs') %>
+      <!-- css style -->
+      <link rel="stylesheet" href="/assets/css/pagina-style.css">
+      <link rel="stylesheet" href="/assets/css/pagina-index.css">
+
+      <title>Pagina Individual</title>
+</head>
+<header>
+  <%- include('./partials/navbar.ejs') %>
+</header>
+
+<body>
+  <main class="row no-gutters">
+
+    <article class="col-3 col-md-2">
+      <section class="cuadrado">
+        <img src="/assets/IMG/ORGULLO-NEGRET.jpg" class="las" alt="">
+      </section>
+
+      <section class="ribbon1">
+        <section class="texto">
+          <p class="nombre">NOMBRE:</p> 
+          <p class="nombre"> <%= infoLibro.TITULO %> </p> 
+          AUTOR: <br>
+          <p class="nombre"> <%= infoLibro.COD_AUTOR %></p> <br>
+        </section>
+      </section>
+    </article>
+
+    <article class="col-sm-6 col-md-8" id="medio">
+      <section class="resena">
+        <h1 class="ribbon"><strong class="ribbon-content">Sinopsis</strong></h1>
+      </section>
+
+      <section class="non-semantic-protector pt-4">
+        <!-- The button to open modal -->
+        <label for="my-modal-3" class="btn btn-info w-2/5 ">Prestamo</label>
+      </section>
+
+      <p class="texto2">
+        <%= infoLibro.SIPNOPSIS %>
+      </p>
+
+      <section class="resenas">
+        <h1 class="ribbon2">
+          <strong class="ribbon-content">Libros similares</strong>
+        </h1>
+      </section>
+    </article>
+
+    <main>
+      <article class="owl-carousel">
+        <figure class="item text-center">
+          <a href="#"><img src="/assets/img/a-dos-metros-de-ti.png" class="img-thumbnail" alt="book-name"></a>
+          <figcaption class="figure-caption">A dos metros de ti</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="#"><img src="/assets/img/atlantis.png" class="img-thumbnail" alt="book-name"></a>
+          <figcaption class="figure-caption">Atlantis: Proyecto tarsis</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="#"><img src="/assets/img/fool-man.png" class="img-thumbnail" alt="book-name"></a>
+          <figcaption class="figure-caption">Fool man</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="#"><img src="/assets/img/lasciva.png" class="img-thumbnail" alt="book-name"></a>
+          <figcaption class="figure-caption">Lasciva</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="#"><img src="/assets/img/naranja-mecanica.png" class="img-thumbnail" alt="book-name"></a>
+          <figcaption class="figure-caption">La naranja mecanica</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="#"><img src="/assets/IMG/jane-eyre-portada-bonita.jpg" class="img-thumbnail" alt="book-name"></a>
+          <figcaption class="figure-caption">Jane Eyre</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="#"><img src="/assets/img/navaja-antigua.png" class="img-thumbnail" alt="book-name"></a>
+          <figcaption class="figure-caption">Navaja antigua</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="#"><img src="/assets/IMG/La sociedad literaria y el pastel de piel de patata de Guernsey.jpg"
+              class="img-thumbnail" alt="book-name"></a>
+          <figcaption class="figure-caption">La sociedad literaria y el paste de piel de patata de Guernsey</figcaption>
+        </figure>
+
+        <figure class="item text-center">
+          <a href="#"><img src="/assets/IMG/La sociedad literaria y el pastel de piel de patata de Guernsey.jpg"
+              class="img-thumbnail" alt="book-name"></a>
+          <figcaption class="figure-caption">La sociedad literaria y el paste de piel de patata de Guernsey</figcaption>
+        </figure>
+      </article>
+      <!-- Put this part before </body> tag -->
+      <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+      <div class="modal">
+        <div class="modal-box relative">
+          <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+          <h3 class="text-lg font-bold text-white">Seguro?</h3>
+          <p class="py-4 text-white">¿Estas seguro de solicitar el prestamo del libro?</p>
+          <div class="modal-action">
+            <a href="/libro/prestamo" class="btn">Confirmar</a>
+          </div>
+        </div>
+      </div>
+      </main>
+    </main>
+
+
+
+    <!-- Script para el carrousel -->
+    <script src="/assets/js/owl-function.js"></script>
+
+    <footer>
+      <%- include('./partials/footer.ejs') %>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,278 @@
+/*.navbar navbar-ligth bg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+
+nav {
+    height: 100px;
+    background-color: #ffffff;
+    text-align: center;
+    display: block;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: right;
+
+}
+
+nav ul li {
+    float: left;
+    margin-top: 20px;
+
+}
+
+nav ul li a {
+    color: white;
+    font-weight: bold;
+    text-decoration: wavy;
+    font-size: 20px;
+    padding: 10px;
+
+}
+
+.logo {
+    height: 80px;
+    width: 80px;
+	margin-top:15px;
+}
+
+.btn-group {
+    width: 50px;
+    font-size: 20px;
+    left: 30vh;
+    size: 50vh;
+	appearance: none;
+
+
+
+}
+
+.text-center {
+    color: white;
+    font-weight: bold;
+	appearance: none;
+
+
+}
+
+#genero {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-color: #f8f0df;
+	appearance: none;
+	text-decoration: none;
+	
+
+}
+.genero:hover{
+	text-decoration: underline;
+}
+
+#botonc {
+    border-width: 3px;
+    border-radius: 10px;
+    border-color: #fefbf3;
+	appearance: none;
+
+}
+
+.dropdown-men{
+	appearance:none;
+}
+
+.perfil {
+    size: 50px;
+}
+
+.footer-top {
+	padding: 60px 0;
+	background: #333;
+	text-align: left;
+	color: #a5a3a3;
+}
+
+.footer-top h3 {
+	padding-bottom: 10px;
+	color: #fff;
+}
+
+.footer-about img.logo-footer {
+	max-width: 74px;
+	margin-top: 0;
+	margin-bottom: 18px;
+}
+
+.footer-about p a {
+	color: #aaa;
+	border-bottom: 1px dashed #666;
+}
+
+.footer-about p a:hover,
+.footer-about p a:focus {
+	color: #fff;
+	border-color: #aaa;
+}
+
+.footer-contact p {
+	word-wrap: break-word;
+}
+
+.footer-contact i {
+	padding-right: 10px;
+	font-size: 18px;
+	color: #666;
+}
+
+.footer-contact p a {
+	color: #aaa;
+	border-bottom: 1px dashed #666;
+}
+
+.footer-contact p a:hover,
+.footer-contact p a:focus {
+	color: #fff;
+	border-color: #aaa;
+}
+
+.footer-social a {
+	display: inline-block;
+	margin-right: 20px;
+	margin-bottom: 8px;
+	color: #777;
+	border: 0;
+}
+
+.footer-social a:hover,
+.footer-social a:focus {
+	color: #aaa;
+	border: 0;
+}
+
+.footer-social i {
+	font-size: 24px;
+	vertical-align: middle;
+}
+
+.footer-bottom {
+	padding: 15px 0;
+	background: #444;
+	text-align: left;
+	color: #aaa;
+}
+
+body{
+	background:#3D525C ;
+}
+
+/* footer navbar */
+.navbar {
+	padding: 0;
+	background: #3D525C;
+	backface-visibility: hidden;
+}
+
+.navbar-dark .navbar-nav {
+	font-size: 15px;
+	color: #fff;
+	font-weight: 400;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color: #fff;
+	border: 0;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+	color: #aaa;
+}
+
+.navbar-dark .navbar-nav .nav-link:focus {
+	color: #ebe8e8;
+	outline: 0;
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+/*redes*/
+.contenedor .boton{
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	margin: 0 5px;
+	background: #fff;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50px;
+	cursor: pointer;
+	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease-out;
+	overflow: hidden;
+  }
+  .contenedor .boton .icono{
+	display: inline-block;
+	height: 60px;
+	width: 60px;
+	text-align: center;
+	border-radius: 50px;
+	box-sizing: border-box;
+	line-height: 60px;
+	transition: all 0.3s ease-out;
+  }
+  .contenedor .boton .icono i{
+	font-size: 25px;
+	line-height: 60px;
+  }
+  .contenedor .boton span{
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 60px;
+	margin-left: 5px;
+  }
+  .contenedor .boton:hover{
+	width: 200px;
+  }
+  .contenedor .boton:nth-child(2):hover .icono{
+	background: #4267b2;
+  }
+  .contenedor .boton:nth-child(3):hover .icono{
+	background: #1DA1F2;
+  }
+  .contenedor .boton:nth-child(4):hover .icono{
+	background: #128c7e;
+  }
+  .contenedor .boton:nth-child(5):hover .icono{
+	background: #333;
+  }
+  .contenedor .boton:hover .icono i{
+	color: #fff;
+  }
+  .contenedor .boton:nth-child(2):hover span{
+	color: #4267b2;
+  }
+  .contenedor .boton:nth-child(3):hover span{
+	color: #1DA1F2;
+  }
+  .contenedor .boton:nth-child(4):hover span{
+	color: #128c7e;
+  }
+  .contenedor .boton:nth-child(5):hover span{
+	color: #333;
+  }
+
+  /* owl content styles */
+  .category-title {
+	border: 2px solid black;
+  }
+  .item {
+	width: 10rem;
+  }
+  .flex-1{
+	color: #f8f0df;
+  }

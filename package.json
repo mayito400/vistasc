@@ -1,0 +1,47 @@
+{
+  "name": "genesis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon app/index.js",
+    "install": "npm i -D @babel/plugin-transform-runtime",
+    "build": "babel app --out-dir dist",
+    "start": "node dist/index.js",
+    "style": "tailwindcss -i ./public/input.css -o ./public/output.css --watch",
+    "lint": "prettier --plugin-search-dir . --check . && eslint .",
+    "format": "prettier --plugin-search-dir . --write ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "daisyui": "^2.51.6",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "file-type": "^18.5.0",
+    "jsonwebtoken": "^9.0.0",
+    "node-fetch": "^2.6.11",
+    "path": "^0.12.7",
+    "sweetalert2": "^11.7.12"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.22.5",
+    "@babel/core": "^7.22.5",
+    "@babel/node": "^7.22.5",
+    "@babel/plugin-transform-runtime": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "eslint": "^8.40.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^2.0.21",
+    "prettier": "^2.8.8",
+    "tailwindcss": "^3.3.2"
+  }
+}

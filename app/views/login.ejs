@@ -1,0 +1,200 @@
+<!DOCTYPE html  data-theme="dracula>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>Login y register</title>
+    <!-- link css -->
+    <link rel="stylesheet" href="/assets/css/login-styles.css" />
+    <link rel="stylesheet" href="/assets/css/toastAlert.css">
+</head>
+
+<body>
+    
+    <div class="container">
+
+        <!-- Aqui empieza el formulario de el login -->
+        <form class="formulario" id="login" action="auth" method="post">
+            <div  class="formulario-title"><h2>Acceder</h2></div>
+            <div class="formulario-usuario" id="formulario-usuario">
+                <img src="../assets/img/usuario.png" class="img" id="img">
+            </div>
+            <div class="formulario-mensaje formulario-mensaje-error"></div>
+            <div class="formulario-input-group">
+
+                <!-- Aqui ingresa con usuario o correo  -->
+                <input type="number" class="formulario-input" id="formulario-input" name="COD_USUARIO" autofocus required placeholder="Numero de documento">
+                <!-- <div class="formulario-input-error-mensaje"></div> -->
+            </div>
+
+            <!-- Contraseña -->
+            <div class="formulario-input-group">
+
+                <input type="password" class="formulario-input" name="PASSWORD" autofocus required placeholder="Contraseña" >
+                <!-- <div class="formulario-input-error-mensaje"></div> -->
+            </div>
+            <!-- Boton para acceder al menu principal -->
+            <button class="formulario-button" type="submit">Continuar</button>
+            <p class="formulario-text">
+
+                <!-- Link para restablecer la contraseña -->
+                <a href="#" class="formulario-link" >Has olvidado tu contraseña?</a>
+            </p>
+
+            <!-- Link para crear cuenta e ir al registro -->
+            <p class="formulario-text">
+                <a class="formulario-link" href="./" id="linkCreateAccount">No tienes cuenta? Create Una aqui.</a>
+            </p>
+       
+        </form>
+        
+        <!-- Registro de un usuario -->
+        <form class="formulario formulario-hidden" id="createAccount" action="/regis" method="post">
+            <h1 class="formulario-title">Crear Cuenta</h1>
+            <div class="formulario-mensaje formulario-mensaje-error"></div>
+            <div class="formulario-input-group">
+
+                <!-- Crear Usuario -->
+
+                <input type="number" id="IngresarUsuario" class="formulario-input" name="COD_USUARIO" autofocus required placeholder="Numero de documento" >
+                <!-- <div class="formulario-input-error-mensaje"></div> -->
+            </div>
+
+            <!-- NOMBRE -->
+            <div class="formulario-input-group">
+                <input type="text" class="formulario-input" name="NOM_USUARIO" autofocus required placeholder="Nombre">
+                <!-- <div class="formulario-input-error-mensaje"></div> -->
+            </div>
+
+            <!-- APELLIDO -->
+            <div class="formulario-input-group">
+                <input type="text" class="formulario-input" name="APELL_USUARIO" autofocus required placeholder="Apellido">
+                <!-- <div class="formulario-input-error-mensaje"></div> -->
+            </div>
+
+            <!-- CORREO -->
+            <div class="formulario-input-group">
+                <input type="text" class="formulario-input" name="CORREO_USUARIO" autofocus required placeholder="Correo">
+                <!-- <div class="formulario-input-error-mensaje"></div> -->
+            </div>
+
+            <!-- CONTRASEÑA -->
+            <div class="formulario-input-group">
+                <input type="password" class="formulario-input" name="PASSWORD" autofocus required placeholder="Contraseña">
+                <!-- <div class="formulario-input-error-mensaje"></div> -->
+            </div>
+            
+            <!-- CONTRASEÑA -->
+            <div class="formulario-input-group">
+                <input type="date" class="formulario-input" name="FECHA_NACIMIENTO" autofocus required placeholder="Fecha de nacimiento">
+                <!-- <div class="formulario-input-error-mensaje"></div> -->
+            </div>
+            
+            <!-- Sexo -->
+            <div class="formulario-input-group">
+                <label class="label cursor-pointer">
+                    <span class="label-text">Masculino</span> 
+                    <input type="radio" name="SEXO_USUARIO" value="M" class="radio checked:bg-red-500" checked />
+                </label>
+
+                <label class="label cursor-pointer">
+                    <span class="label-text">Femenino</span> 
+                    <input type="radio" name="SEXO_USUARIO" value="F" class="radio checked:bg-blue-500" />
+                </label>
+            </div>
+                
+                <!-- Aqui se termina el registro -->
+
+            <!-- Boton para acceder a el login y terminar el Registro  -->
+            <button class="formulario-button" type="submit">Continuar</button>
+            <p class="formulario-text">
+
+                <!-- Link Para acceder a el login  -->
+                <a class="formulario-link" href="./" id="linkLogin">Ya tienes tu cuenta? Accede Ahora mismo</a>
+            </p>
+            
+        </form>
+    </div>
+
+    </main>
+
+    
+    <!-- script login -->
+    <script src="/assets/js/script-login.js"></script>
+    <script src="/assets/js/sweetalert.js"></script>
+    
+    <% if (alertCase === "0") { %>
+        <script>
+            Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Ingresa tus datos para continuar'
+            })
+        </script>
+    <% } else if (alertCase === "1") { %>
+        <script>
+            Swal.fire({
+            icon: 'error',
+            title: 'No estas registrado!',
+            text: 'Necesitas estar registrado para continuar'
+            })
+        </script>
+    <% } else if (alertCase === "2") { %>
+        <script>
+            Swal.fire({
+            icon: 'warning',
+            title: 'Contraseña incorrecta!',
+            text: 'Verifica tus datos para continuar'
+            })
+        </script>
+    <% } else if (alertCase === "3") { %>
+        <script>
+            Swal.fire({
+            icon: 'success',
+            title: 'Has sido registrado correctamente!',
+            text: 'Ahora puedes iniciar sesión en la plataforma',
+            })
+        </script>
+    <% } else if (alertCase === "4") { %>
+        <script>
+            Swal.fire({
+            icon: 'error',
+            title: 'Cuidado!',
+            text: 'El documento ingresado ya se encuentra registrado!',
+            })
+        </script>
+    <% } else if (alertCase === "5") { %>
+        <script>
+            Swal.fire({
+            icon: 'error',
+            title: 'Usuario inactivo!',
+            text: 'Por favor contacta con un administrador',
+            })
+        </script>
+    <% } else { %>
+        <script>
+            async function mostrarToast() {
+                const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-right',
+                iconColor: 'white',
+                customClass: {
+                    popup: 'colored-toast'
+                },
+                showConfirmButton: false,
+                timer: 5500,
+                timerProgressBar: true
+                })
+    
+                await Toast.fire({
+                icon: 'info',
+                title: 'La lectura es el viaje que te lleva más allá de las palabras'
+                })
+            };
+
+            mostrarToast();
+        </script>
+    <% } %>
+
+</body>
+</html>

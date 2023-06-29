@@ -1,0 +1,149 @@
+
+
+body {
+    --color-primary: #009579;
+    --color-primary-dark: #007f67;
+    --color-secondary: #252c6a;
+    --color-error: #cc3333;
+    --color-success: #4bb544;
+    --border-radius: 4px;
+
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     font-size: 18px; 
+    background: url(../Img/pixel.jpg);
+    background-size: cover;
+
+}
+
+.formulario-usuario{
+    justify-content: center;
+    width: 5%;
+    height: 10vh;
+
+}
+
+.container {
+    width: 400px;
+    max-width: 400px;
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    background: #ffffff;
+}
+
+.img{
+    justify-content: center;
+    width: 4rem;
+    margin-left: 10rem;
+    
+}
+
+.container,
+.formulario-input-group,
+.formulario-button {
+    font: 500 1rem 'Quicksand', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.formulario-hidden {
+    display: none;
+}
+
+.form > *:first-child {
+    margin-top: 0;
+}
+
+.form > *:last-child {
+    margin-bottom: 0;
+}
+
+.formulario-title {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.formulario-mensaje {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.formulario-mensaje-success {
+    color: var(--color-success);
+}
+
+.formulario-mensaje-error {
+    color: var(--color-error);
+}
+
+.formulario-input-group {
+    margin-bottom: 1rem;
+}
+
+.formulario-input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    border: 1px solid #dddddd;
+    outline: none;
+    background: #eeeeee;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.formulario-button:hover:focus {
+    border-color: var(--color-primary);
+    background: #ffffff;
+}
+
+.formulario-input-error {
+    color: var(--color-error);
+    border-color: var(--color-error);
+}
+
+.formulario-input-error-mensaje {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-error);
+}
+
+.formulario-button {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    background: var(--color-primary);
+}
+
+.formulario-button:hover {
+    background: var(--color-primary-dark);
+}
+
+.formulario-button:active {
+    transform: scale(0.98);
+}
+
+.formulario-text {
+    text-align: center;
+}
+
+.formulario-link {
+    color: var(--color-secondary);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.formulario-link:hover {
+    text-decoration: underline;
+}

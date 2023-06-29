@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dracula">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+    <style>
+        .rotate-45 {
+            --transform-rotate: 45deg;
+            transform: rotate(45deg);
+        }
+
+        .group:hover .group-hover\:flex {
+            display: flex;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.8.10/tailwind.min.css" />
+    <%- include('./partials/boostrap') %>
+</head>
+
+<body>
+    <div class="flex w-screen h-screen text-gray-400 bg-gray-900">
+        <%- include('./partials/dashmenu.ejs') %>
+            <div class="flex-grow p-6 overflow-auto bg-gray-800">
+                <div class="container mx-auto px-4 sm:px-8">
+                    <div class="py-8">
+                        <div>
+                            <h2 class="text-2xl font-semibold leading-tight">Libros</h2>
+                        </div>
+                        <div class="my-2 flex sm:flex-row flex-col">
+                            <div class="flex flex-row mb-1 sm:mb-0">
+                                <div class="relative"></div>
+                            </div>
+
+                            <div class="block relative">
+                                <span class="h-full absolute inset-y-0 left-0 flex items-center pl-2">
+                                    <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current text-gray-500">
+                                        <path
+                                            d="M10 4a6 6 0 100 12 6 6 0 000-12zm-8 6a8 8 0 1114.32 4.906l5.387 5.387a1 1 0 01-1.414 1.414l-5.387-5.387A8 8 0 012 10z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <input placeholder="Search"
+                                    class="appearance-none rounded-r rounded-l sm:rounded-l-none border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white text-sm placeholder-gray-400 text-gray-700 focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none" />
+                            </div>
+                            <div class="flex items-center ml-auto space-x-2 sm:space-x-3">
+                                <button type="button" data-modal-toggle="add-user-modal"
+                                    class="inline-flex items-center justify-center w-1/2 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    <svg class="w-5 h-5 mr-2 -ml-1" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                    Añadir Libro
+                                </button>
+                            </div>
+                        </div>
+                        <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+                            <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
+                                <table class="min-w-full leading-normal">
+                                    <thead>
+                                        <tr>
+                                            <th
+                                                class="px-4 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                                Codigo
+                                            </th>
+                                            <th
+                                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                                Titulo
+                                            </th>
+                                            <th
+                                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                                Fecha de Publicacion
+                                            </th>
+                                            <th
+                                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                                Genero
+                                            </th>
+                                            <th
+                                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                                Autor
+                                            </th>
+                                            <th
+                                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                                Accion
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% libros.forEach(libro=> { %>
+                                            <tr>
+                                                <td class="px-3 py-5 border-b border-gray-200 bg-white text-sm">
+                                                    <p class="text-gray-900 whitespace-no-wrap">
+                                                        <%= libro.COD_LIBRO %>
+                                                    </p>
+                                                </td>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                    <div class="flex items-center">
+                                                        <div class="ml-3">
+                                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                                <%= libro.TITULO %>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                    <p class="text-gray-900 whitespace-no-wrap">
+                                                        <%= libro.FECHA_PUBLICACION %>
+                                                    </p>
+                                                </td>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                    <span
+                                                        class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                                                        <span aria-hidden
+                                                            class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
+                                                        <span class="relative">
+                                                            <%= libro.COD_GENERO %>
+                                                        </span>
+                                                    </span>
+                                                </td>
+                                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                    <p class="text-gray-900 whitespace-no-wrap">
+                                                        <%= libro.COD_AUTOR %>
+                                                    </p>
+                                                </td>
+                                                <td
+                                                    class="p-4 space-x-2 whitespace-nowrap border-b border-gray-200 bg-white">
+                                                    <button type="button" id="updateProductButton"
+                                                        data-drawer-target="drawer-update-product-default"
+                                                        data-drawer-show="drawer-update-product-default"
+                                                        aria-controls="drawer-update-product-default"
+                                                        data-drawer-placement="right"
+                                                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                                        <svg class="w-4 h-4 mr-2" fill="currentColor"
+                                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z">
+                                                            </path>
+                                                            <path fill-rule="evenodd"
+                                                                d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
+                                                                clip-rule="evenodd"></path>
+                                                        </svg>
+                                                        Actualizar
+                                                    </button>
+                                                    <button type="button" id="deleteProductButton"
+                                                        data-drawer-target="drawer-delete-product-default"
+                                                        data-drawer-show="drawer-delete-product-default"
+                                                        aria-controls="drawer-delete-product-default"
+                                                        data-drawer-placement="right"
+                                                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900">
+                                                        <svg class="w-4 h-4 mr-2" fill="currentColor"
+                                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd"
+                                                                d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                                                                clip-rule="evenodd"></path>
+                                                        </svg>
+                                                        Eliminar
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <!-- Edit Product Drawer -->
+                                            <div id="drawer-update-product-default"
+                                                class="fixed top-0 right-0 z-40 w-full h-screen max-w-xs p-4 overflow-y-auto transition-transform translate-x-full bg-white dark:bg-gray-800"
+                                                tabindex="-1" aria-labelledby="drawer-label" aria-hidden="true">
+                                                <h5 id="drawer-label"
+                                                    class="inline-flex items-center mb-6 text-sm font-semibold text-gray-500 uppercase dark:text-gray-400">
+                                                    Actualizar
+                                                </h5>
+                                                <button type="button"
+                                                    data-drawer-dismiss="drawer-update-product-default"
+                                                    aria-controls="drawer-update-product-default"
+                                                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
+                                                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor"
+                                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd"
+                                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                            clip-rule="evenodd"></path>
+                                                    </svg>
+                                                    <span class="sr-only">Close menu</span>
+                                                </button>
+                                                <form action="editarLibros" method="post">
+                                                    <div class="space-y-4">
+                                                        <div>
+                                                            <label for="name"
+                                                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Titulo</label>
+                                                            <input type="text" name="TITULO" id="name"
+                                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                                                placeholder="Titulo" required="" />
+                                                        </div>
+                                                        <label for="name"
+                                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Fecha
+                                                            de
+                                                            Publicacion</label>
+                                                        <div class="relative max-w-sm">
+                                                            <div
+                                                                class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                                                <svg aria-hidden="true"
+                                                                    class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                                                                    fill="currentColor" viewBox="0 0 20 20"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path fill-rule="evenodd"
+                                                                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                                                        clip-rule="evenodd"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <input datepicker datepicker-autohide type="date"
+                                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                                placeholder="Select date" name="FECHA_PUBLICACION" />
+                                                        </div>
+                                                        <div>
+                                                            <label for="price"
+                                                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Genero</label>
+                                                            <input type="text" name="COD_GENERO" id="price"
+                                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                                                placeholder="Genero" required="" />
+                                                        </div>
+                                                        <div>
+                                                            <label for="description"
+                                                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Autor</label>
+                                                            <input type="text" name="NOM_AUTOR" id="price"
+                                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                                                placeholder="Autor" required="" />
+                                                        </div>
+                                                        <div>
+                                                            <label for="discount"
+                                                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Imagen</label>
+                                                            <input
+                                                                class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                                                id="multiple_files" type="file" multiple name="IMAGEN">
+
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="bottom-0 left-0 flex justify-center w-full pb-4 mt-4 space-x-4 sm:absolute sm:px-4 sm:mt-0">
+                                                        <button  type="submit"
+                                                            class="w-full justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                                            Actualizar
+                                                        </button>
+                                                        <button type="submit"
+                                                            class="w-full justify-center text-white-600 bg-pink-600 inline-flex items-center border border-pink-600 hover:bg-pink-600 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-pink-600 dark:text-pink-600 dark:hover:text-white dark:hover:bg-pink-600 dark:focus:ring-pink-600">
+                                                            <svg aria-hidden="true" class="w-5 h-5 mr-1 -ml-1"
+                                                                fill="currentColor" viewBox="0 0 20 20"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path fill-rule="evenodd"
+                                                                    d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                                                                    clip-rule="evenodd"></path>
+                                                            </svg>
+                                                            Cancelar
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <!-- Delete Product Drawer -->
+                                            <div id="drawer-delete-product-default"
+                                                class="fixed top-0 right-0 z-40 w-full h-screen max-w-xs p-4 overflow-y-auto transition-transform translate-x-full bg-white dark:bg-gray-800"
+                                                tabindex="-1" aria-labelledby="drawer-label" aria-hidden="true">
+                                                <h5 id="drawer-label"
+                                                    class="inline-flex items-center text-sm font-semibold text-gray-500 uppercase dark:text-gray-400">
+                                                    Eliminar
+                                                </h5>
+                                                <button type="button"
+                                                    data-drawer-dismiss="drawer-delete-product-default"
+                                                    aria-controls="drawer-delete-product-default"
+                                                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
+                                                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor"
+                                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd"
+                                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                            clip-rule="evenodd"></path>
+                                                    </svg>
+                                                    <span class="sr-only">Close menu</span>
+                                                </button>
+                                                <svg class="w-10 h-10 mt-8 mb-4 text-red-600" fill="none"
+                                                    stroke="currentColor" viewBox="0 0 24 24"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                </svg>
+                                                <h3 class="mb-6 text-lg text-gray-500 dark:text-gray-400">
+                                                    Estas seguro de eliminar el libro?
+                                                </h3>
+                                                <a href="eliminarLibros?id=<%= libro.COD_LIBRO %>"
+                                                    class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-3 py-2.5 text-center mr-2 dark:focus:ring-red-900">
+                                                    Si, estoy segura
+                                                </a>
+                                                <a href="#"
+                                                    class="text-gray-900 bg-blue-600 hover:bg-gray-100 focus:ring-4 focus:ring-blue-300 border border-gray-200 font-medium inline-flex items-center rounded-lg text-sm px-3 py-2.5 text-center dark:bg-blue-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                                                    data-modal-toggle="delete-product-modal">
+                                                    No, Cancelar
+                                                </a>
+                                            </div>
+                                            <div class="fixed left-0 right-0 z-50 items-center justify-center hidden overflow-x-hidden overflow-y-auto top-4 md:inset-0 h-modal sm:h-full"
+                                                id="add-user-modal">
+                                                <div class="relative w-full h-full max-w-2xl px-4 md:h-auto">
+                                                    <!-- Modal content -->
+                                                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-800">
+                                                        <!-- Modal header -->
+                                                        <div
+                                                            class="flex items-start justify-between p-5 border-b rounded-t dark:border-gray-700">
+                                                            <h3 class="text-xl font-semibold dark:text-white">
+                                                                Agregar Libro
+                                                            </h3>
+                                                            <button type="button"
+                                                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-700 dark:hover:text-white"
+                                                                data-modal-toggle="add-user-modal">
+                                                                <svg class="w-5 h-5" fill="currentColor"
+                                                                    viewBox="0 0 20 20"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path fill-rule="evenodd"
+                                                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                                        clip-rule="evenodd"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                        <!-- Modal body -->
+                                                        <div class="p-6 space-y-6">
+                                                            <form action="insertarLibros" method="post">
+                                                                <div class="grid grid-cols-6 gap-6">
+
+                                                                    <div class="col-span-6 sm:col-span-3">
+                                                                        <label for="last-name"
+                                                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sipnosis</label>
+                                                                        <input type="text" name="SIPNOPSIS"
+                                                                            id="last-name"
+                                                                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                                                            placeholder="Sipnosis" required>
+                                                                    </div>
+                                                                    <div class="col-span-6 sm:col-span-3">
+                                                                        <label for="email"
+                                                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Titulo</label>
+                                                                        <input type="text" name="TITULO"
+                                                                            id="email"
+                                                                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                                                            placeholder="Titulo" required>
+                                                                    </div>
+                                                                    <div class="col-span-6 sm:col-span-3">
+                                                                        <label for="email"
+                                                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Fecha
+                                                                            de Publicacion</label>
+                                                                        <input type="date" name="FECHA_PUBLICACION"
+                                                                            id="email"
+                                                                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                                                            placeholder="Apellido" required>
+                                                                    </div>
+                                                                    <div class="col-span-6 sm:col-span-3">
+                                                                        <label for="email"
+                                                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Serie</label>
+                                                                        <input type="text" name="NUM_SERIE"
+                                                                            id="email"
+                                                                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                                                            placeholder="Serie" required>
+                                                                    </div>
+                                                                    <div class="col-span-6 sm:col-span-3">
+                                                                        <label for="email"
+                                                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Genero</label>
+                                                                        <input type="text" name="COD_GENERO"
+                                                                            id="email"
+                                                                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                                                            placeholder="Genero" required>
+                                                                    </div>
+                                                                    <div class="col-span-6 sm:col-span-3">
+                                                                        <label for="email"
+                                                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Editorial</label>
+                                                                        <input type="text" name="EDITORIAL"
+                                                                            id="email"
+                                                                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                                                            placeholder="Editorial" required>
+                                                                    </div>
+                                                                    <div class="col-span-6 sm:col-span-3">
+                                                                        <label for="position"
+                                                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Autor</label>
+                                                                        <input type="text" name="NOM_AUTOR"
+                                                                            id="position"
+                                                                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                                                            placeholder="Autor" required>
+                                                                    </div>
+                                                                    <div class="col-span-6 sm:col-span-3">
+                                                                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="large_size">Imagen</label>
+                                                                    <input class="block w-full text-lg text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="large_size" type="file">
+                                                                </div>
+                                                                </div>
+                                                                <!-- Modal footer -->
+                                                                <div
+                                                                    class="items-center p-6 border-t border-gray-200 rounded-b dark:border-gray-700">
+                                                                    <button
+                                                                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                                                        type="submit">Aceptar</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% }) %>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script src="/assets/js/sweetalert.js"></script>
+    
+    <% if (alertCase==="0" ) { %>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Ingresa tus datos para continuar'
+            })
+        </script>
+    <% } else if (alertCase==="1" ) { %>
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Felicitaciones!',
+                    text: 'El usuario ha sido registrado exitosamente',
+                })
+            </script>
+    <% } else if (alertCase==="2" ) { %>
+                <script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Cuidado!',
+                        text: 'El documento ingresado ya se encuentra registrado!',
+                    })
+                </script>
+    <% } else { %>
+                    <script>
+                    </script>
+    <% } %>
+</body>
+
+</html>
